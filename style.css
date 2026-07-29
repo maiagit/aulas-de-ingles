@@ -43,6 +43,14 @@ a {
 button {
   font:inherit
 }
+img {
+  max-width:100%;
+  height:auto;
+  display:block
+}
+section[id] {
+  scroll-margin-top:100px
+}
 .container {
   width:min(1140px,calc(100% - 48px));
   margin:auto
@@ -1175,16 +1183,16 @@ footer {
 
 @media(max-width:800px) {
   .container {
-    width:min(100% - 36px,600px)
+    width:min(100% - 24px,600px)
   }
-.site-header {
+  .site-header {
     height:68px
   }
-.menu-toggle {
+  .menu-toggle {
     display:block;
     z-index:2
   }
-.nav-links {
+  .nav-links {
     position:absolute;
     inset:68px 0 auto;
     background:var(--paper);
@@ -1198,192 +1206,236 @@ footer {
     pointer-events:none;
     transition:.25s
   }
-.nav-links.open {
+  .nav-links.open {
     transform:none;
     opacity:1;
     pointer-events:auto
   }
-.nav-links>a:not(.button) {
+  .nav-links>a:not(.button) {
     padding:11px 0
   }
-.nav-links>a:not(.button):after {
+  .nav-links>a:not(.button):after {
     display:none
   }
-.nav-links .button {
+  .nav-links .button {
     margin-top:8px
   }
-.menu-toggle.open i:first-child {
+  .menu-toggle.open i:first-child {
     transform:translateY(7px) rotate(45deg)
   }
-.menu-toggle.open i:nth-child(2) {
+  .menu-toggle.open i:nth-child(2) {
     opacity:0
   }
-.menu-toggle.open i:last-child {
+  .menu-toggle.open i:last-child {
     transform:translateY(-7px) rotate(-45deg)
   }
-.hero {
-    padding:116px 0 76px;
+  .hero {
+    padding:112px 0 64px;
     min-height:auto
   }
-.hero:before {
+  .hero:before {
     width:80%;
     height:48%;
     top:auto;
     bottom:0
   }
-.hero-grid,.about-grid,.benefits-grid,.contact-grid {
+  .hero-grid,.about-grid,.benefits-grid,.contact-grid {
     grid-template-columns:1fr;
-    gap:48px
+    gap:30px
   }
-.hero h1 {
+  .hero-copy {
+    max-width:100%
+  }
+  .hero-actions {
+    flex-wrap:wrap;
+    gap:14px 18px
+  }
+  .hero h1 {
     font-size:clamp(40px,11vw,57px)
   }
-.hero-text {
-    font-size:15px
+  .hero-text {
+    font-size:15px;
+    margin:16px 0 24px
   }
-.hero-visual {
-    height:390px;
+  .hero-note {
+    margin-top:24px
+  }
+  .hero-visual {
+    height:340px;
     width:min(100%,420px);
-    margin:auto
+    margin:0 auto
   }
-.hero-photo-frame {
-    inset:0 32px 0 16px;
+  .hero-photo-frame {
+    inset:0 28px 0 14px;
     transform:rotate(-1.5deg)
   }
-.scroll-cue {
+  .scroll-cue {
     display:none
   }
-.section {
-    padding:82px 0
+  .section {
+    padding:72px 0
   }
-.about-image {
-    height:405px
+  .about-image {
+    height:390px
   }
-.portrait {
-    height:370px
+  .portrait {
+    height:360px
   }
-.class-grid {
-    grid-template-columns:1fr 1fr
+  .class-grid {
+    grid-template-columns:1fr 1fr;
+    gap:14px
   }
-.benefit-list {
+  .class-card {
+    min-height:220px
+  }
+  .benefit-list {
     gap:1px
   }
-.gallery-head {
-    display:block
+  .gallery-head {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:24px
   }
-.gallery-head>p {
-    margin-top:15px
+  .gallery-head>p {
+    margin-top:0
   }
-.gallery-grid {
+  .gallery-grid {
     grid-template-columns:1fr 1fr;
-    grid-auto-rows:150px
+    grid-auto-rows:140px;
+    gap:10px
   }
-.gallery-item.tall {
+  .gallery-item.tall {
     grid-row:span 2
   }
-.gallery-item.wide {
+  .gallery-item.wide {
     grid-column:span 2
   }
-.timeline {
+  .gallery-placeholder {
+    font-size:18px
+  }
+  .timeline {
     grid-template-columns:1fr 1fr;
     gap:35px 15px;
     margin-top:40px
   }
-.timeline:before {
+  .timeline:before {
     display:none
   }
-.testimonial-wrap {
+  .testimonial-wrap {
     gap:8px
   }
-.slider-arrow {
+  .slider-arrow {
     flex:none
   }
-.footer-top {
+  .footer-top {
     flex-direction:column;
     align-items:flex-start
   }
-.footer-top div {
+  .footer-top div {
     flex-wrap:wrap
   }
-.footer-bottom {
+  .footer-bottom {
     gap:10px;
     flex-direction:column
   }
-.contact-links {
+  .contact-links {
     gap:9px
   }
 }
 
 @media(max-width:460px) {
+  .container {
+    width:min(100% - 20px,100%)
+  }
+  .hero {
+    padding:104px 0 56px
+  }
   .hero-actions {
     align-items:stretch;
     flex-direction:column;
-    gap:16px
+    gap:14px
   }
-.hero-actions .text-link {
+  .hero-actions .text-link {
     align-self:flex-start
   }
-.hero-visual {
+  .hero-visual {
+    height:290px
+  }
+  .word-card {
+    padding:9px 14px;
+    font-size:18px
+  }
+  .word-card-one {
+    left:0;
+    top:12px
+  }
+  .word-card-two {
+    right:0;
+    bottom:18px
+  }
+  .round-sticker {
+    right:4px;
+    width:58px;
+    height:58px;
+    font-size:15px
+  }
+  .about-image {
     height:340px
   }
-.word-card-one {
-    left:-5px
+  .portrait {
+    height:310px
   }
-.round-sticker {
-    right:0;
-    width:62px;
-    height:62px;
-    font-size:16px
-  }
-.about-image {
-    height:365px
-  }
-.portrait {
-    height:335px
-  }
-.photo-caption {
+  .photo-caption {
     padding:16px;
     font-size:19px
   }
-.class-grid,.benefit-list {
-    grid-template-columns:1fr
+  .class-grid,.benefit-list {
+    grid-template-columns:1fr;
+    gap:12px
   }
-.class-card {
-    min-height:230px
+  .class-card {
+    min-height:220px
   }
-.gallery-grid {
-    grid-auto-rows:130px;
+  .gallery-grid {
+    grid-auto-rows:120px;
     gap:8px
   }
-.gallery-placeholder {
-    font-size:17px
+  .gallery-placeholder {
+    font-size:16px;
+    padding:0 12px
   }
-.floating-whatsapp {
-    right:15px;
-    bottom:15px;
-    width:51px;
+  .floating-whatsapp {
+    right:12px;
+    bottom:12px;
+    width:48px;
+    height:48px;
     padding:0;
     justify-content:center
   }
-.floating-whatsapp i {
+  .floating-whatsapp i {
     display:none
   }
-.testimonial blockquote {
+  .testimonial blockquote {
     font-size:23px
   }
-.testimonial-wrap {
+  .testimonial-wrap {
     margin-inline:-10px
   }
-.slider-arrow {
+  .slider-arrow {
     width:32px;
     height:32px
   }
-.instagram-callout {
+  .instagram-callout {
     align-items:flex-start;
     text-align:left
   }
-.contact h2 {
-    font-size:40px
+  .contact h2 {
+    font-size:34px
+  }
+  .footer-top div {
+    gap:10px 12px
   }
 }
 

@@ -29,14 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  const dialog = document.querySelector('.lightbox'); const modalImage = dialog.querySelector('img'); const modalCaption = dialog.querySelector('p');
-  document.querySelectorAll('.gallery-item').forEach(item => item.addEventListener('click', () => {
-    const src = item.dataset.image; modalCaption.textContent = item.dataset.caption;
-    modalImage.src = src; modalImage.alt = item.dataset.caption;
-    modalImage.onerror = () => { modalImage.removeAttribute('src'); modalCaption.textContent = 'Adicione sua foto em ' + src; };
-    dialog.showModal();
-  }));
-  dialog.querySelector('.lightbox-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
 
 });
