@@ -1183,7 +1183,7 @@ footer {
 
 @media(max-width:800px) {
   .container {
-    width:min(100% - 24px,600px)
+    width:min(600px,calc(100% - 24px))
   }
   .site-header {
     height:68px
@@ -1242,6 +1242,9 @@ footer {
   .hero-grid,.about-grid,.benefits-grid,.contact-grid {
     grid-template-columns:1fr;
     gap:30px
+  }
+  .hero-grid>*,.about-grid>*,.benefits-grid>*,.contact-grid>*,.benefit>* {
+    min-width:0
   }
   .hero-copy {
     max-width:100%
@@ -1343,11 +1346,14 @@ footer {
   .contact-links {
     gap:9px
   }
+  .contact-card strong {
+    overflow-wrap:anywhere
+  }
 }
 
 @media(max-width:460px) {
   .container {
-    width:min(100% - 20px,100%)
+    width:calc(100% - 20px)
   }
   .hero {
     padding:104px 0 56px
@@ -1436,6 +1442,34 @@ footer {
   }
   .footer-top div {
     gap:10px 12px
+  }
+}
+
+/* Extra protection for narrow phones (320 px and smaller). */
+@media(max-width:360px) {
+  .brand {
+    gap:7px;
+    font-size:12px
+  }
+  .brand span {
+    width:32px;
+    height:32px
+  }
+  .hero h1 {
+    font-size:39px
+  }
+  .hero-visual {
+    height:260px
+  }
+  .contact-card {
+    padding:14px;
+    gap:10px
+  }
+  .contact-card strong {
+    font-size:12px
+  }
+  .footer-top p {
+    max-width:250px
   }
 }
 
